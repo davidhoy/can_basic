@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Microchip/harmony/v3/csp_apps_pic32mx/apps/can/can_normal_operation_blocking/firmware/src/main_pic32mx.c</file>
+            <file>file:/C:/Microchip/harmony/v3/csp_apps_pic32mx/apps/can/can_normal_operation_blocking/firmware/src/config/pic32mx_125_sk/interrupts.c</file>
+            <file>file:/C:/Microchip/harmony/v3/csp_apps_pic32mx/apps/can/can_normal_operation_blocking/firmware/src/config/pic32mx_125_sk/peripheral/can/plib_can1.c</file>
+        </group>
+    </open-files>
+</project-private>
