@@ -26,6 +26,7 @@
           <itemPath>../src/config/pic32mx_125_sk/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
+      <itemPath>../src/NMEA2000_pic32mx.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -78,10 +79,14 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main_pic32mx.c</itemPath>
+      <itemPath>../src/NMEA2000_pic32mx.cpp</itemPath>
+      <itemPath>../src/appn2k.cpp</itemPath>
+      <itemPath>../src/appn2k.h</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
+    <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -104,6 +109,23 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../../../NMEA2000/NMEA2000.X"
+                            CT="3"
+                            CN="default"
+                            AC="true"
+                            BL="true"
+                            WD="../../../NMEA2000/NMEA2000.X"
+                            BC="${MAKE}  -f Makefile CONF=default"
+                            DBC="${MAKE}  -f Makefile CONF=default TYPE_IMAGE=DEBUG_RUN"
+                            CC="rm -rf &quot;build/default&quot; &quot;dist/default&quot;"
+                            OP="dist/default/production/NMEA2000.X.a"
+                            DOP="dist/default/debug/NMEA2000.X.a"
+                            FL="dist/default/production/NMEA2000.X.a"
+                            PD="dist/default/production/NMEA2000.X."
+                            DD="dist/default/debug/NMEA2000.X.">
+              </makeArtifact>
+            </linkerLibProjectItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -135,12 +157,12 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mx_125_sk;../src/packs/PIC32MX570F512L_DFP;"/>
+                  value="../src;../src/config/pic32mx_125_sk;../src/packs/PIC32MX570F512L_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
         <property key="make-warnings-into-errors" value="true"/>
-        <property key="optimization-level" value="-O1"/>
+        <property key="optimization-level" value=""/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
@@ -200,7 +222,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="512"/>
+        <property key="heap-size" value="12288"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -232,12 +254,12 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mx_125_sk;../src/packs/PIC32MX570F512L_DFP;"/>
+                  value="../src;../src/config/pic32mx_125_sk;../src/packs/PIC32MX570F512L_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
         <property key="make-warnings-into-errors" value="false"/>
-        <property key="optimization-level" value="-O1"/>
+        <property key="optimization-level" value=""/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
@@ -251,7 +273,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
-        <property key="common-include-directories" value=""/>
+        <property key="common-include-directories" value="..\..\..\NMEA2000\src"/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
         <property key="mdtcm" value=""/>
@@ -329,7 +351,6 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>

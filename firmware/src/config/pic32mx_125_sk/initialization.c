@@ -156,7 +156,7 @@ void SYS_Initialize ( void* data )
 
 	GPIO_Initialize();
 
-    CAN1_Initialize();
+   //CAN1_Initialize();
 
 
 

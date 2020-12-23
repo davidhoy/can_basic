@@ -49,6 +49,7 @@
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
+#include "appn2k.h"
 
 #define SW1_PRESSED_STATE           0   // Active LOW switch
 
@@ -60,6 +61,7 @@
 
 int main ( void )
 {
+#if 0
     uint32_t messageID = 0x87654321;
     uint32_t rx_messageID = 0;
     uint8_t message[8];
@@ -69,19 +71,26 @@ int main ( void )
     uint8_t rx_messageLength = 0;
     uint8_t count = 0;
     CAN_MSG_RX_ATTRIBUTE msgAttr = CAN_MSG_RX_DATA_FRAME;
+#endif
 
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+    NMEA2000Setup();
 
     /* Prepare the message to send*/
+#if 0
     messageID = 0x469;
     messageLength = 8;
     for (count = 8; count >=1; count--){
         message[count - 1] = count;
     }
+#endif
 
     while ( true )
     {
+#if 1
+        NMEA2000Loop();
+#else
         if(SW1_Get() == SW1_PRESSED_STATE)
         {
             while(SW1_Get() == SW1_PRESSED_STATE);
@@ -112,6 +121,7 @@ int main ( void )
                 }
             }
         }
+#endif
     }
 
     /* Execution should not come here during normal operation */
