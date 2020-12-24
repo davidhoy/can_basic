@@ -2,11 +2,14 @@
 #define USE_N2K_CAN 9           // for use with PIC32MX-based boards
 #include "NMEA2000_CAN.h"       // This will automatically choose right CAN library and create suitable NMEA2000 object
 #include "N2kMessages.h"
+#include "N2kDeviceList.h"
+#include "N2KMessageHandler.h"
 #include "appn2k.h"
 
 
 // List here messages your device will transmit.
-const unsigned long TransmitMessages[] PROGMEM={127506L,127508L,127513L,0};
+const unsigned long TransmitMessages[] PROGMEM={127505L,127506L,127508L,127513L,0};
+
 
 // ---  Example of using PROGMEM to hold Configuration information.  However, doing this will prevent any updating of
 //      these details outside of recompiling the program.
@@ -14,8 +17,14 @@ const char BatteryMonitorManufacturerInformation  [] PROGMEM = "ElectroMaax, Inc
 const char BatteryMonitorInstallationDescription1 [] PROGMEM = "Installation Desc 1"; 
 const char BatteryMonitorInstallationDescription2 [] PROGMEM = "Installation Desc 2"; 
 
+
 #define BatUpdatePeriod     1000
 #define LevelUpdatePeriod   2500
+
+
+tN2kDeviceList*     pN2kDeviceList = NULL;
+tN2KMessageHandler  N2KMessageHandler(&NMEA2000);
+
 
 static void SendN2kBattery(void) {
     static unsigned long TempUpdated=millis();
@@ -32,7 +41,6 @@ static void SendN2kBattery(void) {
         //Serial.print(millis()); Serial.println(", Battery send ready");
 //        BSP_LEDToggle(BSP_LED_2);
     }
-    
 }
 
 static void SendN2kLevel(void) {
@@ -50,18 +58,18 @@ static void SendN2kLevel(void) {
 
 void NMEA2000Setup(void) {
     
-    // Set up the NMEA2000 interface
-    NMEA2000.SetMode(tNMEA2000::N2km_ListenAndNode,22);     // This mode allows bi-directional N2K communications
+    // Set up the NMEA2000 interface   
+    NMEA2000.SetN2kCANSendFrameBufSize(150);                // Make send big enough for product info
+    NMEA2000.SetN2kCANMsgBufSize(8);                        // 5 is enough to handle fast-packet messages
+    NMEA2000.SetMode(tNMEA2000::N2km_ListenAndNode,42);     // This mode allows bidirectional N2K communications
     NMEA2000.EnableForward(false);                          // Disable all message forwarding
-    NMEA2000.SetN2kCANMsgBufSize(5);                        // 5 is enough to handle fast-packet messages
-    NMEA2000.SetN2kCANSendFrameBufSize(134);                // Make send big enough for product info
     
     // Set Product information
-    NMEA2000.SetProductInformation("12345678",              // Manufacturer's Model serial code
+    NMEA2000.SetProductInformation("42",                    // Manufacturer's Model serial code
                                    NMEA2000_PID,            // Manufacturer's product code
                                    NMEA2000_Product_Name,   // Manufacturer's Model ID
-                                   "0.0.0.1",               // Manufacturer's Software version code
-                                   "0.0.0.1",               // Manufacturer's Model version
+                                   "1.0.0.1",               // Manufacturer's Software version code
+                                   "1.0.0.1",               // Manufacturer's Model version
                                    1,                       // Load Equivalency,
                                    1300,                    // N2k Version,
                                    0);                      // Certification Level,
@@ -78,6 +86,10 @@ void NMEA2000Setup(void) {
                                   NMEA2000_VID              // Vendor ID                               
                                   );
     
+    NMEA2000.ExtendTransmitMessages(TransmitMessages);
+    
+    pN2kDeviceList = new tN2kDeviceList(&NMEA2000);
+    
     //NMEA2000.ExtendTransmitMessages(127505, 0);
                           
     // Start the NMEA2000 interface
@@ -87,6 +99,7 @@ void NMEA2000Setup(void) {
 void NMEA2000Loop(void) {
     //SendN2kBattery();
     NMEA2000.ParseMessages();
+    N2KMessageHandler.Update();
 //    BSP_LEDToggle(BSP_LED_1);
 }
 

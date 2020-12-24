@@ -15,8 +15,8 @@
  */
 /* ************************************************************************** */
 
-#ifndef _EXAMPLE_FILE_NAME_H    /* Guard against multiple inclusion */
-#define _EXAMPLE_FILE_NAME_H
+#ifndef _APPN2K_H    /* Guard against multiple inclusion */
+#define _APPN2K_H
 
 
 /* ************************************************************************** */
@@ -182,7 +182,7 @@ extern "C" {
 }
 #endif
 
-#endif /* _EXAMPLE_FILE_NAME_H */
+#endif /* _APPN2K_H */
 
 /* *****************************************************************************
  End of File

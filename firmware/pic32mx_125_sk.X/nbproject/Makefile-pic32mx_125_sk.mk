@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c ../src/config/pic32mx_125_sk/initialization.c ../src/config/pic32mx_125_sk/interrupts.c ../src/config/pic32mx_125_sk/exceptions.c ../src/main_pic32mx.c ../src/NMEA2000_pic32mx.cpp ../src/appn2k.cpp
+SOURCEFILES_QUOTED_IF_SPACED=../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c ../src/config/pic32mx_125_sk/initialization.c ../src/config/pic32mx_125_sk/interrupts.c ../src/config/pic32mx_125_sk/exceptions.c ../src/main_pic32mx.c ../src/NMEA2000_pic32mx.cpp ../src/appn2k.cpp ../src/N2KMessageHandler.cpp
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1294814837/plib_can1.o ${OBJECTDIR}/_ext/1294814499/plib_clk.o ${OBJECTDIR}/_ext/1484474576/plib_evic.o ${OBJECTDIR}/_ext/1484420748/plib_gpio.o ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o ${OBJECTDIR}/_ext/107778817/initialization.o ${OBJECTDIR}/_ext/107778817/interrupts.o ${OBJECTDIR}/_ext/107778817/exceptions.o ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o ${OBJECTDIR}/_ext/1360937237/appn2k.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1294814837/plib_can1.o.d ${OBJECTDIR}/_ext/1294814499/plib_clk.o.d ${OBJECTDIR}/_ext/1484474576/plib_evic.o.d ${OBJECTDIR}/_ext/1484420748/plib_gpio.o.d ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o.d ${OBJECTDIR}/_ext/107778817/initialization.o.d ${OBJECTDIR}/_ext/107778817/interrupts.o.d ${OBJECTDIR}/_ext/107778817/exceptions.o.d ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o.d ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o.d ${OBJECTDIR}/_ext/1360937237/appn2k.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1294814837/plib_can1.o ${OBJECTDIR}/_ext/1294814499/plib_clk.o ${OBJECTDIR}/_ext/1484474576/plib_evic.o ${OBJECTDIR}/_ext/1484420748/plib_gpio.o ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o ${OBJECTDIR}/_ext/107778817/initialization.o ${OBJECTDIR}/_ext/107778817/interrupts.o ${OBJECTDIR}/_ext/107778817/exceptions.o ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o ${OBJECTDIR}/_ext/1360937237/appn2k.o ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1294814837/plib_can1.o.d ${OBJECTDIR}/_ext/1294814499/plib_clk.o.d ${OBJECTDIR}/_ext/1484474576/plib_evic.o.d ${OBJECTDIR}/_ext/1484420748/plib_gpio.o.d ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o.d ${OBJECTDIR}/_ext/107778817/initialization.o.d ${OBJECTDIR}/_ext/107778817/interrupts.o.d ${OBJECTDIR}/_ext/107778817/exceptions.o.d ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o.d ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o.d ${OBJECTDIR}/_ext/1360937237/appn2k.o.d ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1294814837/plib_can1.o ${OBJECTDIR}/_ext/1294814499/plib_clk.o ${OBJECTDIR}/_ext/1484474576/plib_evic.o ${OBJECTDIR}/_ext/1484420748/plib_gpio.o ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o ${OBJECTDIR}/_ext/107778817/initialization.o ${OBJECTDIR}/_ext/107778817/interrupts.o ${OBJECTDIR}/_ext/107778817/exceptions.o ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o ${OBJECTDIR}/_ext/1360937237/appn2k.o
+OBJECTFILES=${OBJECTDIR}/_ext/1294814837/plib_can1.o ${OBJECTDIR}/_ext/1294814499/plib_clk.o ${OBJECTDIR}/_ext/1484474576/plib_evic.o ${OBJECTDIR}/_ext/1484420748/plib_gpio.o ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o ${OBJECTDIR}/_ext/107778817/initialization.o ${OBJECTDIR}/_ext/107778817/interrupts.o ${OBJECTDIR}/_ext/107778817/exceptions.o ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o ${OBJECTDIR}/_ext/1360937237/appn2k.o ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o
 
 # Source Files
-SOURCEFILES=../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c ../src/config/pic32mx_125_sk/initialization.c ../src/config/pic32mx_125_sk/interrupts.c ../src/config/pic32mx_125_sk/exceptions.c ../src/main_pic32mx.c ../src/NMEA2000_pic32mx.cpp ../src/appn2k.cpp
+SOURCEFILES=../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c ../src/config/pic32mx_125_sk/initialization.c ../src/config/pic32mx_125_sk/interrupts.c ../src/config/pic32mx_125_sk/exceptions.c ../src/main_pic32mx.c ../src/NMEA2000_pic32mx.cpp ../src/appn2k.cpp ../src/N2KMessageHandler.cpp
 
 
 
@@ -233,6 +233,12 @@ ${OBJECTDIR}/_ext/1360937237/appn2k.o: ../src/appn2k.cpp  .generated_files/2512f
 	@${RM} ${OBJECTDIR}/_ext/1360937237/appn2k.o 
 	${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../../../NMEA2000/src" -frtti -fexceptions -fno-check-new -fenforce-eh-specs -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/appn2k.o.d" -o ${OBJECTDIR}/_ext/1360937237/appn2k.o ../src/appn2k.cpp   -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
+${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o: ../src/N2KMessageHandler.cpp  .generated_files/fff5ee8fa2c619658be137ec7abeb96424ee9c2c.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o 
+	${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../../../NMEA2000/src" -frtti -fexceptions -fno-check-new -fenforce-eh-specs -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o.d" -o ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o ../src/N2KMessageHandler.cpp   -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
 else
 ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o: ../src/NMEA2000_pic32mx.cpp  .generated_files/5e0c37b936a38a8e26d4b36603a61aa37d18d882.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
@@ -245,6 +251,12 @@ ${OBJECTDIR}/_ext/1360937237/appn2k.o: ../src/appn2k.cpp  .generated_files/820b7
 	@${RM} ${OBJECTDIR}/_ext/1360937237/appn2k.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/appn2k.o 
 	${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../../../NMEA2000/src" -frtti -fexceptions -fno-check-new -fenforce-eh-specs -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/appn2k.o.d" -o ${OBJECTDIR}/_ext/1360937237/appn2k.o ../src/appn2k.cpp   -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o: ../src/N2KMessageHandler.cpp  .generated_files/1acd9843c4dd6a9034b7b8b562ee8b46e4496f2c.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o 
+	${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../../../NMEA2000/src" -frtti -fexceptions -fno-check-new -fenforce-eh-specs -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o.d" -o ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o ../src/N2KMessageHandler.cpp   -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 endif
 

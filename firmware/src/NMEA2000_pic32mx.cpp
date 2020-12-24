@@ -29,9 +29,7 @@
 
 
 #include "NMEA2000_pic32mx.h"
-extern "C" {
-#include "definitions.h"
-}
+
 
 //*****************************************************************************
 tNMEA2000_pic32mx::tNMEA2000_pic32mx(uint16_t _DefTimeOut) : tNMEA2000() {
