@@ -9,14 +9,14 @@
 
 
 // List here messages your device will transmit/receive.
-const unsigned long TransmitMessages[] PROGMEM = {127505L,127506L,127508L,127513L,0};
-const unsigned long ReceiveMessages[]  PROGMEM = {127250L,127258L,128259UL,128267UL,129025UL,129026L,129029L,0};
+const unsigned long TransmitMessages[] PROGMEM = {127506L,127508L,127513L,0};
+const unsigned long ReceiveMessages[]  PROGMEM = {0};
 
 // ---  Example of using PROGMEM to hold Configuration information.  However, doing this will prevent any updating of
 //      these details outside of recompiling the program.
 const char ManufacturerInformation  [] PROGMEM = "ElectroMaax, Inc. http://www.electromaax.com"; 
 const char InstallationDescription1 [] PROGMEM = "Nooobody expects..."; 
-const char InstallationDescription2 [] PROGMEM = "..the Spanish Inquisition!"; 
+const char InstallationDescription2 [] PROGMEM = "...the Spanish Inquisition!"; 
 
 
 #define BatUpdatePeriod     1000
