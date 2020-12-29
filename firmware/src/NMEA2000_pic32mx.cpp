@@ -27,7 +27,6 @@
   based setup. See also NMEA2000 library.
 */
 
-
 #include "NMEA2000_pic32mx.h"
 
 
@@ -37,18 +36,18 @@ tNMEA2000_pic32mx::tNMEA2000_pic32mx(uint16_t _DefTimeOut) : tNMEA2000() {
 	m_DefTimeOut = _DefTimeOut;
 }
 
-extern void CanIdToN2k(unsigned long id, unsigned char& prio, unsigned long& pgn, unsigned char& src, unsigned char& dst);
+//extern void CanIdToN2k(unsigned long id, unsigned char& prio, unsigned long& pgn, unsigned char& src, unsigned char& dst);
 
 
 //*****************************************************************************
 bool tNMEA2000_pic32mx::CANSendFrame(unsigned long id, unsigned char len, const unsigned char *buf, bool fastpacket) {
     
-    //LED1_Set();
+    LED1_Set();
     CAN_MSG_TX_ATTRIBUTE msgAttr = CAN_MSG_TX_DATA_FRAME;
     uint32_t _id = id;
     uint8_t  _len = len;
     bool ret = CAN1_MessageTransmit(_id, _len, (uint8_t*)buf, 0, msgAttr);
-    LED1_Toggle();
+    LED1_Clear();
 	return ret;
 }
 
@@ -73,7 +72,6 @@ bool tNMEA2000_pic32mx::CANGetFrame(unsigned long& id, unsigned char& len, unsig
                 if (status == CAN_ERROR_NONE) {
                     id = rxid;
                     len = rxlen;
-                    LED2_Toggle();
                     return true;  
                 }
             }
@@ -90,19 +88,17 @@ void tNMEA2000_pic32mx::InitCANFrameBuffers() {
 #define ReadCoreTimer()     _CP0_GET_COUNT()          // Read the MIPS Core Timer
 #define SYS_CLK_FREQ        4800000
 #define GetSystemClock()    (80000000UL)/* Fcy = 80MHz */
-#define us_SCALE            (GetSystemClock()/2000000)
-#define ms_SCALE            (GetSystemClock()/2000)
+#define us_SCALE            (GetSystemClock()/4000000)
+#define ms_SCALE            (GetSystemClock()/4000)
 
-inline void DelayMs(unsigned long int msDelay )
-{
+inline void DelayMs(unsigned long int msDelay ) {
     register unsigned int startCntms = ReadCoreTimer();
     register unsigned int waitCntms = msDelay * ms_SCALE;
     while( ReadCoreTimer() - startCntms < waitCntms )
         ;
 }
 
-inline void DelayUs(unsigned long int usDelay )
-{
+inline void DelayUs(unsigned long int usDelay ) {
     register unsigned int startCnt = ReadCoreTimer();
     register unsigned int waitCnt = usDelay * us_SCALE;
     while( ReadCoreTimer() - startCnt < waitCnt )

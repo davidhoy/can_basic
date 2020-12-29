@@ -4,12 +4,13 @@
 #include "N2kMessages.h"
 #include "N2kDeviceList.h"
 #include "N2KMessageHandler.h"
+#include "N2kGroupFunctionDefaultHandlers.h"
 #include "appn2k.h"
 
 
-// List here messages your device will transmit.
-const unsigned long TransmitMessages[] PROGMEM={127505L,127506L,127508L,127513L,0};
-
+// List here messages your device will transmit/receive.
+const unsigned long TransmitMessages[] PROGMEM = {127505L,127506L,127508L,127513L,0};
+const unsigned long ReceiveMessages[]  PROGMEM = {127250L,127258L,128259UL,128267UL,129025UL,129026L,129029L,0};
 
 // ---  Example of using PROGMEM to hold Configuration information.  However, doing this will prevent any updating of
 //      these details outside of recompiling the program.
@@ -22,8 +23,23 @@ const char BatteryMonitorInstallationDescription2 [] PROGMEM = "Installation Des
 #define LevelUpdatePeriod   2500
 
 
-tN2kDeviceList*     pN2kDeviceList = NULL;
-tN2KMessageHandler  N2KMessageHandler(&NMEA2000);
+//tN2kDataToNMEA0183 N2kDataToNMEA0183(&NMEA2000, &NMEA0183_Out);
+//tN2KMessageHandler  N2KMessageHandler(&NMEA2000);
+
+
+typedef struct {
+  unsigned long PGN;
+  void (*Handler)(const tN2kMsg &N2kMsg); 
+} tNMEA2000Handler;
+
+void FluidLevel(const tN2kMsg &N2kMsg);
+void WaterDepth(const tN2kMsg &N2kMsg);
+
+tNMEA2000Handler NMEA2000Handlers[]={
+    {127505L, &FluidLevel },
+    {128267L, &WaterDepth },
+    {0,       0}
+};
 
 
 static void SendN2kBattery(void) {
@@ -55,52 +71,121 @@ static void SendN2kLevel(void) {
     } 
 }
 
+void WaterDepth(const tN2kMsg &N2kMsg) {
+    unsigned char SID;
+    double DepthBelowTransducer;
+    double Offset;
+
+    if (ParseN2kWaterDepth(N2kMsg,SID,DepthBelowTransducer,Offset) ) {
+      if (Offset>0) {
+        //Serial.print("Water depth:");
+      } else {
+        //Serial.print("Depth below keel:");
+      }
+      //Serial.println(DepthBelowTransducer+Offset);
+    }
+}
+
+void FluidLevel(const tN2kMsg &N2kMsg) {
+    unsigned char Instance;
+    tN2kFluidType FluidType;
+    double Level=0;
+    double Capacity=0;
+
+    if (ParseN2kFluidLevel(N2kMsg,Instance,FluidType,Level,Capacity) ) {
+      switch (FluidType) {
+        case N2kft_Fuel:
+          //Serial.print("Fuel level :");
+          break;
+        case N2kft_Water:
+          //Serial.print("Water level :");
+          break;
+        case N2kft_GrayWater:
+          //Serial.print("Gray water level :");
+          break;
+        case N2kft_LiveWell:
+          //Serial.print("Live well level :");
+          break;
+        case N2kft_Oil:
+          //Serial.print("Oil level :");
+          break;
+        case N2kft_BlackWater:
+          //Serial.print("Black water level :");
+          break;
+      }
+      //Serial.print(Level); Serial.print("%"); 
+      //Serial.print(" ("); Serial.print(Capacity*Level/100); Serial.print("l)");
+      //Serial.print(" capacity :"); Serial.println(Capacity);
+    }
+}
+
+void HandleNMEA2000Msg(const tN2kMsg &N2kMsg) { 
+  // Find handler
+    LED2_Toggle();
+    for (int i = 0; NMEA2000Handlers[i].PGN !=0; i++) {
+        if (N2kMsg.PGN == NMEA2000Handlers[i].PGN) {
+            NMEA2000Handlers[i].Handler(N2kMsg);
+            break;
+        }
+    }
+}
+
+uint32_t GetSerialNbr() {
+    return 12345;
+}
+
+bool ISORequestHandler(unsigned long RequestedPGN, unsigned char Requester, int DeviceIndex) {
+    return false;
+}
 
 void NMEA2000Setup(void) {
     
-    // Set up the NMEA2000 interface   
-    NMEA2000.SetN2kCANSendFrameBufSize(150);                // Make send big enough for product info
-    NMEA2000.SetN2kCANMsgBufSize(8);                        // 5 is enough to handle fast-packet messages
-    NMEA2000.SetMode(tNMEA2000::N2km_ListenAndNode,42);     // This mode allows bidirectional N2K communications
-    NMEA2000.EnableForward(false);                          // Disable all message forwarding
+    //char serialNbrStr[32];
+    uint32_t serialNbr = GetSerialNbr();
+    //snprintf(serialNbrStr, sizeof(serialNbrStr), "%lu", serialNbr);
     
     // Set Product information
-    NMEA2000.SetProductInformation("42",                    // Manufacturer's Model serial code
+    NMEA2000.SetProductInformation("42",                    // Manufacturer's Model code
                                    NMEA2000_PID,            // Manufacturer's product code
                                    NMEA2000_Product_Name,   // Manufacturer's Model ID
                                    "1.0.0.1",               // Manufacturer's Software version code
                                    "1.0.0.1",               // Manufacturer's Model version
-                                   1,                       // Load Equivalency,
-                                   1300,                    // N2k Version,
-                                   0);                      // Certification Level,
+                                   1,                       // Load Equivalency
+                                   1300,                    // N2k Version
+                                   0);                      // Certification Level
+    
+    // Set device information
+    NMEA2000.SetDeviceInformation(serialNbr,                // Unique number. Use e.g. Serial number.
+                                  NMEA2000_Function_Code,   // Device function. See codes on http://www.nmea.org/Assets/20120726%20nmea%202000%20class%20&%20function%20codes%20v%202.00.pdf
+                                  NMEA2000_Class_Code,      // Device class. See codes on http://www.nmea.org/Assets/20120726%20nmea%202000%20class%20&%20function%20codes%20v%202.00.pdf
+                                  NMEA2000_VID              // Vendor ID                               
+                                  );
     
     // Set Configuration information
     NMEA2000.SetProgmemConfigurationInformation(BatteryMonitorManufacturerInformation,
                                                 BatteryMonitorInstallationDescription1,
                                                 BatteryMonitorInstallationDescription2);
-  
-    // Set device information
-    NMEA2000.SetDeviceInformation(0x12345678,               // Unique number. Use e.g. Serial number.
-                                  NMEA2000_Function_Code,   // Device function. See codes on http://www.nmea.org/Assets/20120726%20nmea%202000%20class%20&%20function%20codes%20v%202.00.pdf
-                                  NMEA2000_Class_Code,      // Device class. See codes on  http://www.nmea.org/Assets/20120726%20nmea%202000%20class%20&%20function%20codes%20v%202.00.pdf
-                                  NMEA2000_VID              // Vendor ID                               
-                                  );
     
+    // Set up the NMEA2000 interface   
+    NMEA2000.SetN2kCANSendFrameBufSize(150);                // Make send big enough for product info
+    NMEA2000.SetN2kCANMsgBufSize(8);                        // 5 is enough to handle fast-packet messages
+    NMEA2000.SetMode(tNMEA2000::N2km_NodeOnly,0);      // This mode allows bidirectional N2K communications
+    NMEA2000.EnableForward(false);                          // Disable all message forwarding
+    
+    // Specify the messages we're interested in receiving and transmitting
     NMEA2000.ExtendTransmitMessages(TransmitMessages);
+    NMEA2000.ExtendReceiveMessages(ReceiveMessages); 
     
-    pN2kDeviceList = new tN2kDeviceList(&NMEA2000);
+    // Create message handler instance, and attach it
+    NMEA2000.AttachMsgHandler(new tN2KMessageHandler(&NMEA2000));
+    NMEA2000.SetISORqstHandler(ISORequestHandler); 
     
-    //NMEA2000.ExtendTransmitMessages(127505, 0);
-                          
     // Start the NMEA2000 interface
     NMEA2000.Open();
 }
 
 void NMEA2000Loop(void) {
-    //SendN2kBattery();
     NMEA2000.ParseMessages();
-    N2KMessageHandler.Update();
-//    BSP_LEDToggle(BSP_LED_1);
 }
 
 

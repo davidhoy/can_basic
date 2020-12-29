@@ -1,3 +1,6 @@
 firmware/pic32mx_125_sk.X/.generated_files/
 firmware/pic32mx_125_sk.X/build/
 firmware/pic32mx_125_sk.X/dist/
+firmware/nmea2000app.X/.generated_files/
+firmware/nmea2000app.X/build/
+firmware/nmea2000app.X/dist/

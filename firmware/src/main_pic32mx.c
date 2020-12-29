@@ -61,71 +61,17 @@
 
 int main ( void )
 {
-#if 0
-    uint32_t messageID = 0x87654321;
-    uint32_t rx_messageID = 0;
-    uint8_t message[8];
-    uint8_t rx_message[8];
-    uint32_t status = 0;
-    uint8_t messageLength = 0;
-    uint8_t rx_messageLength = 0;
-    uint8_t count = 0;
-    CAN_MSG_RX_ATTRIBUTE msgAttr = CAN_MSG_RX_DATA_FRAME;
-#endif
-
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     NMEA2000Setup();
 
-    /* Prepare the message to send*/
-#if 0
-    messageID = 0x469;
-    messageLength = 8;
-    for (count = 8; count >=1; count--){
-        message[count - 1] = count;
-    }
-#endif
-
+    /* Main loop */
     while ( true )
     {
-#if 1
         NMEA2000Loop();
-#else
-        if(SW1_Get() == SW1_PRESSED_STATE)
-        {
-            while(SW1_Get() == SW1_PRESSED_STATE);
-            /* Transmit a Message */
-            if (CAN1_MessageTransmit(messageID, messageLength, message, 0, CAN_MSG_TX_DATA_FRAME) == true)
-            {
-                LED1_Toggle();
-            }
-        }
-        if (CAN1_InterruptGet(1, CAN_FIFO_INTERRUPT_RXNEMPTYIF_MASK))
-        {
-            /* Check CAN Status */
-            status = CAN1_ErrorGet();
-
-            if (status == CAN_ERROR_NONE)
-            {
-                memset(rx_message, 0x00, sizeof(rx_message));
-
-                /* Receive New Message */
-                if (CAN1_MessageReceive(&rx_messageID, &rx_messageLength, rx_message, 0, 1, &msgAttr) == true)
-                {
-                    status = CAN1_ErrorGet();
-                    if (status == CAN_ERROR_NONE)
-                    {
-                        LED2_Toggle();
-                    }
-                    //CAN1_MessageTransmit(rx_messageID, rx_messageLength, rx_message, 0, msgAttr);
-                }
-            }
-        }
-#endif
     }
 
     /* Execution should not come here during normal operation */
-
     return ( EXIT_FAILURE );
 }
 
