@@ -4,8 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/git/can_normal_operation_blocking/firmware/src/NMEA2000_pic32mx.cpp</file>
-            <file>file:/C:/git/can_normal_operation_blocking/firmware/src/main_pic32mx.c</file>
-            <file>file:/C:/git/can_normal_operation_blocking/firmware/src/appn2k.h</file>
+            <file>file:/C:/git/can_normal_operation_blocking/firmware/src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.h</file>
+            <file>file:/C:/git/can_normal_operation_blocking/firmware/src/N2KMessageHandler.cpp</file>
             <file>file:/C:/git/can_normal_operation_blocking/firmware/src/appn2k.cpp</file>
         </group>
     </open-files>
