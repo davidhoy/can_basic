@@ -14,17 +14,13 @@ const unsigned long ReceiveMessages[]  PROGMEM = {127250L,127258L,128259UL,12826
 
 // ---  Example of using PROGMEM to hold Configuration information.  However, doing this will prevent any updating of
 //      these details outside of recompiling the program.
-const char BatteryMonitorManufacturerInformation  [] PROGMEM = "ElectroMaax, Inc.  http://www.electromaax.com"; 
-const char BatteryMonitorInstallationDescription1 [] PROGMEM = "Installation Desc 1"; 
-const char BatteryMonitorInstallationDescription2 [] PROGMEM = "Installation Desc 2"; 
+const char ManufacturerInformation  [] PROGMEM = "ElectroMaax, Inc. http://www.electromaax.com"; 
+const char InstallationDescription1 [] PROGMEM = "Nooobody expects..."; 
+const char InstallationDescription2 [] PROGMEM = "..the Spanish Inquisition!"; 
 
 
 #define BatUpdatePeriod     1000
 #define LevelUpdatePeriod   2500
-
-
-//tN2kDataToNMEA0183 N2kDataToNMEA0183(&NMEA2000, &NMEA0183_Out);
-//tN2KMessageHandler  N2KMessageHandler(&NMEA2000);
 
 
 typedef struct {
@@ -151,7 +147,7 @@ void NMEA2000Setup(void) {
                                    "1.0.0.1",               // Manufacturer's Software version code
                                    "1.0.0.1",               // Manufacturer's Model version
                                    1,                       // Load Equivalency
-                                   1300,                    // N2k Version
+                                   2101,                    // N2k Version
                                    0);                      // Certification Level
     
     // Set device information
@@ -162,9 +158,9 @@ void NMEA2000Setup(void) {
                                   );
     
     // Set Configuration information
-    NMEA2000.SetProgmemConfigurationInformation(BatteryMonitorManufacturerInformation,
-                                                BatteryMonitorInstallationDescription1,
-                                                BatteryMonitorInstallationDescription2);
+    NMEA2000.SetProgmemConfigurationInformation(ManufacturerInformation,
+                                                InstallationDescription1,
+                                                InstallationDescription2);
     
     // Set up the NMEA2000 interface   
     NMEA2000.SetN2kCANSendFrameBufSize(150);                // Make send big enough for product info

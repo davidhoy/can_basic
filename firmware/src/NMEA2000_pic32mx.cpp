@@ -47,6 +47,7 @@ bool tNMEA2000_pic32mx::CANSendFrame(unsigned long id, unsigned char len, const 
     uint32_t _id = id;
     uint8_t  _len = len;
     bool ret = CAN1_MessageTransmit(_id, _len, (uint8_t*)buf, 0, msgAttr);
+    delay(1);
     LED1_Clear();
 	return ret;
 }
