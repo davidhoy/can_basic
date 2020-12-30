@@ -39,17 +39,13 @@ extern "C" {
 class tNMEA2000_pic32mx : public tNMEA2000
 {
 protected:
-    unsigned int    m_DefTimeOut; 
-    unsigned char   m_NumTxMailBoxes;
-  
-    
     bool CANOpen();
     bool CANGetFrame(unsigned long &id, unsigned char &len, unsigned char *buf);
     bool CANSendFrame(unsigned long id, unsigned char len, const unsigned char *buf, bool wait_sent);
     void InitCANFrameBuffers();
   
 public:
-    tNMEA2000_pic32mx(uint16_t _DefTimeOut=4);
+    tNMEA2000_pic32mx();
 };
 
 #endif

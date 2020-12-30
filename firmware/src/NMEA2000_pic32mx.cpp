@@ -31,9 +31,7 @@
 
 
 //*****************************************************************************
-tNMEA2000_pic32mx::tNMEA2000_pic32mx(uint16_t _DefTimeOut) : tNMEA2000() {
-
-	m_DefTimeOut = _DefTimeOut;
+tNMEA2000_pic32mx::tNMEA2000_pic32mx() : tNMEA2000() {
 }
 
 //extern void CanIdToN2k(unsigned long id, unsigned char& prio, unsigned long& pgn, unsigned char& src, unsigned char& dst);
@@ -87,15 +85,16 @@ void tNMEA2000_pic32mx::InitCANFrameBuffers() {
 
 
 #define ReadCoreTimer()     _CP0_GET_COUNT()          // Read the MIPS Core Timer
-#define SYS_CLK_FREQ        4800000
-#define GetSystemClock()    (80000000UL)/* Fcy = 80MHz */
-#define us_SCALE            (GetSystemClock()/4000000)
-#define ms_SCALE            (GetSystemClock()/4000)
+#define SYS_CLK_FREQ        4800000UL
+#define GetSystemClock      (80000000UL)/* Fcy = 80MHz */
+#define us_SCALE            (GetSystemClock/4000000UL)
+#define ms_SCALE            (GetSystemClock/4000UL)
+
 
 inline void DelayMs(unsigned long int msDelay ) {
     register unsigned int startCntms = ReadCoreTimer();
-    register unsigned int waitCntms = msDelay * ms_SCALE;
-    while( ReadCoreTimer() - startCntms < waitCntms )
+    register unsigned int waitCntms = startCntms + (msDelay * ms_SCALE);
+    while( ReadCoreTimer() < waitCntms )
         ;
 }
 
