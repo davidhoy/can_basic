@@ -9,7 +9,15 @@
 
 
 // List here messages your device will transmit/receive.
-const unsigned long TransmitMessages[] PROGMEM = {127506L,127508L,127513L,0};
+const unsigned long TransmitMessages[] PROGMEM = {127505L,  // Fluid Level
+                                                  127506L,  // DC Status
+                                                  127508L,  // Battery Status
+                                                  127513L,  // Battery Config
+                                                  127510L,  // Charger Config
+                                                  127507L,  // Charger Status
+                                                  127489L,  // Engine Parameters
+                                                  127750L,  // Converter (inverter/charger) status)
+                                                  0};
 const unsigned long ReceiveMessages[]  PROGMEM = {0};
 
 // ---  Example of using PROGMEM to hold Configuration information.  However, doing this will prevent any updating of
