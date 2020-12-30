@@ -104,51 +104,35 @@ static void SendN2kFluidLevel(void) {
 
 static void SendN2kChargerConfig(void) {
     tN2kMsg N2kMsg;
-    
-    N2kMsg.SetPGN(127510L);
-    N2kMsg.Priority=6;
-    
-    N2kMsg.AddByte(0);          // Field 1, 8 bits, Charger instance
-    N2kMsg.AddByte(0);          // Field 2, 8 bits, Battery instance
-    uint8_t byte = 0x01;        // Field 3, 2 bits, Charger enable/disable
-    byte |= 0xFF << 6;          // Field 4, 6 bits, Reserved, set to 1
-    N2kMsg.AddByte(byte);
-    N2kMsg.AddByte(0);          // Field 5, 8 bits, Charge current limit %
-    byte = 0x03;                // Field 6, 4 bits, Charging algorithm
-    byte |= (0x00 << 4);        // Field 7, 4 bits, Charger Mode
-    N2kMsg.AddByte(byte);
-    byte = 0x00;                // Field 8, 4 bits, Estimate temp
-    byte |= 0x00 << 4;          // Field 9, 2 bits, Equalize one time enable/disable
-    byte |= 0x00 << 6;          // Field 10, 2 bits, Over charge enable/disable
-    N2kMsg.AddByte(byte);
-    N2kMsg.Add2ByteUInt(0);         // Field 11, 16 bits, Equalization time
-    
+    SetN2kChargerConfigStatus(N2kMsg,
+                             1,                     // Charger instance
+                             1,                     // Battery instance
+                             N2kOnOff_Enabled,      // Charger enabled/disabled
+                             100,                   // Charger Current Limit
+                             N2kCA_TwoStage_NoFloat,// Charger algorithm
+                             N2kCM_Standalone,      // Charger Mode
+                             N2kCET_Warm,           // Charger Estimated Temperature
+                             N2kOnOff_Disabled,     // Equalization One Time enable/disable
+                             N2kOnOff_Disabled,     // Over charge enable/disable
+                             120);                  // Equalization time, in minutes
     NMEA2000.SendMsg(N2kMsg);
 }
 
 static void SendN2kChargerStatus(void) {
     tN2kMsg N2kMsg;
-    
-    N2kMsg.SetPGN(127507L);
-    N2kMsg.Priority=6;
-    
-    N2kMsg.AddByte(0);          // Field 1, 8 bits, Charger instance
-    N2kMsg.AddByte(0);          // Field 2, 8 bits, Battery instance
-    uint8_t byte = 0x01;        // Field 3, 4 bits, Operating state
-    byte |= 0x00 << 4;          // Field 4, 4 bits, Charger mode
-    N2kMsg.AddByte(byte);
-    byte  = 0x01 << 0;          // Field 5, 2 bits, Charger enable/disable
-    byte |= 0x01 << 2;          // Field 6, 2 bits, Equalization pending
-    byte |= 0x00 << 4;          // Field 7, 4 bits, Reserved
-    N2kMsg.AddByte(byte);       
-    N2kMsg.Add2ByteUInt(0);     // Field 8, 16 bits, Equalization time remaining
- 
+    SetN2kChargerStatus(N2kMsg, 
+                        1,                  // Charger instance
+                        1,                  // Battery Instance,
+                        N2kCS_Bulk,         // Charger State
+                        N2kCM_Standalone,   // Charger Mode
+                        N2kOnOff_On,        // Charger Enable/Disable
+                        N2kOnOff_Off,       // Equalization Pending
+                        N2kDoubleNA);       // Equalization Time Remaining
     NMEA2000.SendMsg(N2kMsg);
 }
 
 static void SendN2kEngineParameters(void) {
     tN2kMsg N2kMsg;
-    
     SetN2kEngineDynamicParam(N2kMsg, 
                              1,             // EngineInstance,
                              N2kDoubleNA,   // EngineOilPress
@@ -175,6 +159,16 @@ static void SendN2kEngineParameters(void) {
 }
 
 static void SendN2kConverterStatus(void) {
+    tN2kMsg N2kMsg;
+    SetN2kConverterStatus(N2kMsg, 
+                          1,                // Sequence ID
+                          1,                // Connection Number
+                          N2kCOS_Bulk,      // Converter Operating State
+                          N2kCTS_OK,        // Converter Temperature State
+                          N2kCOLS_OK,       // Converter Overload State
+                          N2kCLVS_OK,       // Converter Low Voltage State
+                          N2kCRS_OK);       // Converter Ripple State 
+    NMEA2000.SendMsg(N2kMsg);
 }
 
 
