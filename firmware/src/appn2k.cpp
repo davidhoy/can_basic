@@ -31,17 +31,17 @@ typedef struct {
     uint32_t    PGN;
     uint32_t    period;
     uint32_t    lastSent;;
-    void (*sendFunc)(void);
+    void (*sendFunc)(uint8_t destination, int device);
 } tNMEA2000SupportedMessage;
 
-static void SendN2kFluidLevel(void);
-static void SendN2kBatteryStatus(void);
-static void SendN2kDCStatus(void);
-static void SendN2kBatteryConfig(void);
-static void SendN2kChargerConfig(void);
-static void SendN2kChargerStatus(void);
-static void SendN2kEngineParameters(void);
-static void SendN2kConverterStatus(void);
+static void SendN2kFluidLevel(uint8_t destination, int device);
+static void SendN2kBatteryStatus(uint8_t destination, int device);
+static void SendN2kDCStatus(uint8_t destination, int device);
+static void SendN2kBatteryConfig(uint8_t destination, int device);
+static void SendN2kChargerConfig(uint8_t destination, int device);
+static void SendN2kChargerStatus(uint8_t destination, int device);
+static void SendN2kEngineParameters(uint8_t destination, int device);
+static void SendN2kConverterStatus(uint8_t destination, int device);
 
 tNMEA2000SupportedMessage supportedMessages[] = {
     { 127505L, 2500, 0, SendN2kFluidLevel       },
@@ -67,43 +67,49 @@ tNMEA2000Handler NMEA2000Handlers[]={
 };
 
 
-static void SendN2kBatteryStatus(void) {
+static void SendN2kBatteryStatus(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
     
     // PGN 127508
     SetN2kDCBatStatus(N2kMsg,1,13.87,5.12,35.12,1);
-    NMEA2000.SendMsg(N2kMsg);
+    N2kMsg.Destination = destination;
+    NMEA2000.SendMsg(N2kMsg, device);
 }
 
-static void SendN2kDCStatus(void) {  
+static void SendN2kDCStatus(uint8_t destination, int device) {  
     tN2kMsg N2kMsg;
     
     // PGN 127506
     SetN2kDCStatus(N2kMsg,1,1,N2kDCt_Battery,56,92,38500,0.012,1000.0);
-    NMEA2000.SendMsg(N2kMsg);
+    N2kMsg.Destination = destination;
+    NMEA2000.SendMsg(N2kMsg, device);
 }
 
-static void SendN2kBatteryConfig(void) {
+static void SendN2kBatteryConfig(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
+    
     SetN2kBatConf(N2kMsg,1,N2kDCbt_Gel,N2kDCES_Yes,N2kDCbnv_12v,N2kDCbc_LeadAcid,AhToCoulomb(420),53,1.251,75);
-    NMEA2000.SendMsg(N2kMsg);
+    N2kMsg.Destination = destination;
+    NMEA2000.SendMsg(N2kMsg, device);
 }
 
-static void SendN2kFluidLevel(void) {
+static void SendN2kFluidLevel(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
     static double fluidLevel = 0.0;
     static int increment = 5;
   
     SetN2kFluidLevel(N2kMsg, 5, N2kft_BlackWater, fluidLevel, 100.0);
-    NMEA2000.SendMsg(N2kMsg); 
+    N2kMsg.Destination = destination;
+    NMEA2000.SendMsg(N2kMsg, device); 
     
     fluidLevel += increment;
     if (fluidLevel >= 100 || fluidLevel <= 0)
         increment *= -1;
 }
 
-static void SendN2kChargerConfig(void) {
+static void SendN2kChargerConfig(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
+    
     SetN2kChargerConfigStatus(N2kMsg,
                              1,                     // Charger instance
                              1,                     // Battery instance
@@ -115,11 +121,13 @@ static void SendN2kChargerConfig(void) {
                              N2kOnOff_Disabled,     // Equalization One Time enable/disable
                              N2kOnOff_Disabled,     // Over charge enable/disable
                              120);                  // Equalization time, in minutes
-    NMEA2000.SendMsg(N2kMsg);
+    N2kMsg.Destination = destination;
+    NMEA2000.SendMsg(N2kMsg, device);
 }
 
-static void SendN2kChargerStatus(void) {
+static void SendN2kChargerStatus(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
+    
     SetN2kChargerStatus(N2kMsg, 
                         1,                  // Charger instance
                         1,                  // Battery Instance,
@@ -128,11 +136,13 @@ static void SendN2kChargerStatus(void) {
                         N2kOnOff_On,        // Charger Enable/Disable
                         N2kOnOff_Off,       // Equalization Pending
                         N2kDoubleNA);       // Equalization Time Remaining
-    NMEA2000.SendMsg(N2kMsg);
+    N2kMsg.Destination = destination;
+    NMEA2000.SendMsg(N2kMsg, device);
 }
 
-static void SendN2kEngineParameters(void) {
+static void SendN2kEngineParameters(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
+    
     SetN2kEngineDynamicParam(N2kMsg, 
                              1,             // EngineInstance,
                              N2kDoubleNA,   // EngineOilPress
@@ -155,11 +165,13 @@ static void SendN2kEngineParameters(void) {
                      //  bool flagWarning1=false,          bool flagWarning2=false,         bool flagPowerReduction=false,      bool flagMaintenanceNeeded=false,
                      //  bool flagEngineCommError=false,   bool flagSubThrottle=false,      bool flagNeutralStartProtect=false, bool flagEngineShuttingDown=false) {
                             );
-    NMEA2000.SendMsg(N2kMsg);
+    N2kMsg.Destination = destination;
+    NMEA2000.SendMsg(N2kMsg, device);
 }
 
-static void SendN2kConverterStatus(void) {
+static void SendN2kConverterStatus(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
+    
     SetN2kConverterStatus(N2kMsg, 
                           1,                // Sequence ID
                           1,                // Connection Number
@@ -168,7 +180,8 @@ static void SendN2kConverterStatus(void) {
                           N2kCOLS_OK,       // Converter Overload State
                           N2kCLVS_OK,       // Converter Low Voltage State
                           N2kCRS_OK);       // Converter Ripple State 
-    NMEA2000.SendMsg(N2kMsg);
+    N2kMsg.Destination = destination;
+    NMEA2000.SendMsg(N2kMsg, device);
 }
 
 
@@ -188,7 +201,19 @@ void setIsoAddress(uint8_t _isoAddress) {
 } 
 
 bool ISORequestHandler(unsigned long RequestedPGN, unsigned char Requester, int DeviceIndex) {
-    return false;
+    bool ret = false;
+    
+    // Scan the list of PGNs we support to find a match
+    for (int i = 0; i < supportedMessages[i].PGN != 0; i++) {
+        if (supportedMessages[i].PGN == RequestedPGN) {
+            // Found a match, go send this PGN
+            supportedMessages[i].sendFunc(Requester, DeviceIndex);
+            supportedMessages[i].lastSent = millis();
+            ret = true;
+            break;
+        }
+    }
+    return ret;
 }
 
 void NMEA2000Setup(void) {
@@ -250,8 +275,8 @@ void NMEA2000Loop(void) {
         if (supportedMessages[i].period != 0) {
             uint32_t elapsed = timeNow - supportedMessages[i].lastSent;
             if (elapsed >= supportedMessages[i].period) {
+                supportedMessages[i].sendFunc(0xFF, 0);    // Broadcast message
                 supportedMessages[i].lastSent = timeNow;
-                supportedMessages[i].sendFunc();
             }
         }
     }
