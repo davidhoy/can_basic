@@ -71,7 +71,12 @@ static void SendN2kBatteryStatus(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
     
     // PGN 127508
-    SetN2kDCBatStatus(N2kMsg,1,13.87,5.12,35.12,1);
+    SetN2kDCBatStatus(N2kMsg,
+                      1,                // Battery instance
+                      13.87,            // Battery voltage
+                      5.12,             // Battery current 
+                      CToKelvin(35.12), // Battery temperature
+                      1);               // SID
     N2kMsg.Destination = destination;
     NMEA2000.SendMsg(N2kMsg, device);
 }
@@ -80,7 +85,15 @@ static void SendN2kDCStatus(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
     
     // PGN 127506
-    SetN2kDCStatus(N2kMsg,1,1,N2kDCt_Battery,56,92,38500,0.012,1000.0);
+    SetN2kDCStatus(N2kMsg,
+                   1,                   // SID
+                   1,                   // DC Instance
+                   N2kDCt_Battery,      // DC Type
+                   56,                  // State Of Charge, %
+                   92,                  // State Of Health, %
+                   38500,               // Time Remaining, minutes
+                   0.012,               // Ripple Voltage
+                   1000.0);             // Capacity    
     N2kMsg.Destination = destination;
     NMEA2000.SendMsg(N2kMsg, device);
 }
@@ -88,7 +101,17 @@ static void SendN2kDCStatus(uint8_t destination, int device) {
 static void SendN2kBatteryConfig(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
     
-    SetN2kBatConf(N2kMsg,1,N2kDCbt_Gel,N2kDCES_Yes,N2kDCbnv_12v,N2kDCbc_LeadAcid,AhToCoulomb(420),53,1.251,75);
+    // PGN 127513
+    SetN2kBatConf(N2kMsg,
+                  1,                    // Battery Instance
+                  N2kDCbt_AGM,          // Battery Type
+                  N2kDCES_No,           // Supports Equalization
+                  N2kDCbnv_12v,         // Nominal Voltage
+                  N2kDCbc_LeadAcid,     // Battery Chemistry
+                  AhToCoulomb(420),     // Battery Capacity
+                  53,                   // Temperature Coefficient
+                  1.251,                // Peukert Exponent
+                  75);                  // Charge Efficieny Factor
     N2kMsg.Destination = destination;
     NMEA2000.SendMsg(N2kMsg, device);
 }
@@ -98,7 +121,12 @@ static void SendN2kFluidLevel(uint8_t destination, int device) {
     static double fluidLevel = 0.0;
     static int increment = 5;
   
-    SetN2kFluidLevel(N2kMsg, 5, N2kft_BlackWater, fluidLevel, 100.0);
+    // PGN 127505
+    SetN2kFluidLevel(N2kMsg,
+                     5,                 // Fluid Level Instance
+                     N2kft_BlackWater,  // Fluid Type
+                     fluidLevel,        // Tank Level, %
+                     galToCuM(100.0));  // Tank Capacity
     N2kMsg.Destination = destination;
     NMEA2000.SendMsg(N2kMsg, device); 
     
@@ -110,11 +138,12 @@ static void SendN2kFluidLevel(uint8_t destination, int device) {
 static void SendN2kChargerConfig(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
     
+    // PGN 127510
     SetN2kChargerConfigStatus(N2kMsg,
                              1,                     // Charger instance
                              1,                     // Battery instance
                              N2kOnOff_Enabled,      // Charger enabled/disabled
-                             100,                   // Charger Current Limit
+                             100,                   // Charger Current Limit, %
                              N2kCA_TwoStage_NoFloat,// Charger algorithm
                              N2kCM_Standalone,      // Charger Mode
                              N2kCET_Warm,           // Charger Estimated Temperature
@@ -128,6 +157,7 @@ static void SendN2kChargerConfig(uint8_t destination, int device) {
 static void SendN2kChargerStatus(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
     
+    // PGN 127507
     SetN2kChargerStatus(N2kMsg, 
                         1,                  // Charger instance
                         1,                  // Battery Instance,
@@ -143,12 +173,13 @@ static void SendN2kChargerStatus(uint8_t destination, int device) {
 static void SendN2kEngineParameters(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
     
+    // PGN 127489
     SetN2kEngineDynamicParam(N2kMsg, 
                              1,             // EngineInstance,
                              N2kDoubleNA,   // EngineOilPress
                              N2kDoubleNA,   // EngineOilTemp,
                              N2kDoubleNA,   // EngineCoolantTemp, 
-                             16.7,          // AltenatorVoltage,
+                             16.7,          // AlternatorVoltage,
                              N2kDoubleNA,   // FuelRate,
                              N2kDoubleNA,   // EngineHours,
                              N2kDoubleNA,   // EngineCoolantPress
@@ -172,6 +203,7 @@ static void SendN2kEngineParameters(uint8_t destination, int device) {
 static void SendN2kConverterStatus(uint8_t destination, int device) {
     tN2kMsg N2kMsg;
     
+    // PGN 127750
     SetN2kConverterStatus(N2kMsg, 
                           1,                // Sequence ID
                           1,                // Connection Number
@@ -196,9 +228,11 @@ static uint8_t isoAddress = 0x00;
 uint8_t getIsoAddress(void) {
     return isoAddress; 
 }
+
 void setIsoAddress(uint8_t _isoAddress) { 
     isoAddress = _isoAddress;
 } 
+
 
 bool ISORequestHandler(unsigned long RequestedPGN, unsigned char Requester, int DeviceIndex) {
     bool ret = false;
@@ -215,6 +249,7 @@ bool ISORequestHandler(unsigned long RequestedPGN, unsigned char Requester, int 
     }
     return ret;
 }
+
 
 void NMEA2000Setup(void) {
     
