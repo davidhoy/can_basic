@@ -17,8 +17,10 @@ const unsigned long TransmitMessages[] PROGMEM = {127505L,  // Fluid Level
                                                   127507L,  // Charger Status
                                                   127489L,  // Engine Parameters
                                                   127750L,  // Converter (inverter/charger) status)
+                                                  126720L,  // Proprietary config get/set
                                                   0};
-const unsigned long ReceiveMessages[]  PROGMEM = {0};
+const unsigned long ReceiveMessages[]  PROGMEM = {126720L,
+                                                  0};
 
 // ---  Example of using PROGMEM to hold Configuration information.  However, doing this will prevent any updating of
 //      these details outside of recompiling the program.
@@ -44,15 +46,16 @@ static void SendN2kEngineParameters(uint8_t destination, int device);
 static void SendN2kConverterStatus(uint8_t destination, int device);
 
 tNMEA2000SupportedMessage supportedMessages[] = {
-    { 127505L, 2500, 0, SendN2kFluidLevel       },
-    { 127508L, 1500, 0, SendN2kBatteryStatus    },
-    { 127506L, 1000, 0, SendN2kDCStatus         },
-    { 127513L, 0,    0, SendN2kBatteryConfig    },
-    { 127510L, 0,    0, SendN2kChargerConfig    },
-    { 127507L, 1500, 0, SendN2kChargerStatus    },
-    { 127489L, 500,  0, SendN2kEngineParameters },
-    { 127750L, 1500, 0, SendN2kConverterStatus  },
-    { 0,       0,    0, NULL                    }
+    { 127505L, 2500, 0, SendN2kFluidLevel        },
+    { 127508L, 1500, 0, SendN2kBatteryStatus     },
+    { 127506L, 1000, 0, SendN2kDCStatus          },
+    { 127513L, 0,    0, SendN2kBatteryConfig     },
+    { 127510L, 0,    0, SendN2kChargerConfig     },
+    { 127507L, 1500, 0, SendN2kChargerStatus     },
+  //{ 127489L, 500,  0, SendN2kEngineParameters  },
+    { 127750L, 1500, 0, SendN2kConverterStatus   },
+  //{ 126720L, 0,    0, SendN2kProprietaryConfig },
+    { 0,       0,    0, NULL                     }
 };
 
 

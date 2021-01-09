@@ -34,7 +34,8 @@ protected:
     unsigned long       lastTankLevel;
 
 protected:
-    void HandleFluidLevel(const tN2kMsg &N2kMsg); // 127250
+    void HandleFluidLevel(const tN2kMsg &N2kMsg);   // 127250
+    void HandleProprietaryConfig(const tN2kMsg &N2kMsg);  // 126720
 
 public:
     tN2KMessageHandler(tNMEA2000 *_pNMEA2000) : tNMEA2000::tMsgHandler(0,_pNMEA2000) {
