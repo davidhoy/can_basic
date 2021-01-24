@@ -142,6 +142,7 @@
 
 void SYS_Initialize ( void* data )
 {
+
     /* Start out with interrupts disabled before configuring any modules */
     __builtin_disable_interrupts();
 
@@ -158,6 +159,7 @@ void SYS_Initialize ( void* data )
 
    //CAN1_Initialize();
 
+	BSP_Initialize();
 
 
 

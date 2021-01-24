@@ -1,18 +1,21 @@
 /*******************************************************************************
-  System Definitions
+  Board Support Package Header File.
+
+  Company:
+    Microchip Technology Inc.
 
   File Name:
-    definitions.h
+    bsp.h
 
   Summary:
-    project system definitions.
+    Board Support Package Header File 
 
   Description:
-    This file contains the system-wide prototypes and definitions for a project.
+    This file contains constants, macros, type definitions and function
+    declarations 
+*******************************************************************************/
 
- *******************************************************************************/
-
-//DOM-IGNORE-BEGIN
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -34,101 +37,82 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************/
-//DOM-IGNORE-END
+*******************************************************************************/
+// DOM-IGNORE-END
 
-#ifndef DEFINITIONS_H
-#define DEFINITIONS_H
+#ifndef _BSP_H
+#define _BSP_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>
-#include <stddef.h>
 #include <stdbool.h>
-#include "peripheral/can/plib_can1.h"
-#include "peripheral/clk/plib_clk.h"
-#include "peripheral/gpio/plib_gpio.h"
-#include "peripheral/evic/plib_evic.h"
-#include "bsp/bsp.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-extern "C" {
-
-#endif
-// DOM-IGNORE-END
+#include "device.h"
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: System Functions
+// Section: BSP Macros
+// *****************************************************************************
+// *****************************************************************************
+/*** SWITCH Macros for SWITCH3 ***/
+#define SWITCH3_Get() ((PORTD >> 13) & 0x1)
+#define SWITCH3_STATE_PRESSED 0
+#define SWITCH3_STATE_RELEASED 1
+/*** SWITCH Macros for SWITCH2 ***/
+#define SWITCH2_Get() ((PORTD >> 7) & 0x1)
+#define SWITCH2_STATE_PRESSED 0
+#define SWITCH2_STATE_RELEASED 1
+
+
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Interface Routines
 // *****************************************************************************
 // *****************************************************************************
 
 // *****************************************************************************
-/* System Initialization Function
-
-  Function:
-    void SYS_Initialize( void *data )
+/* Function:
+    void BSP_Initialize(void)
 
   Summary:
-    Function that initializes all modules in the system.
+    Performs the necessary actions to initialize a board
 
   Description:
-    This function initializes all modules in the system, including any drivers,
-    services, middleware, and applications.
+    This function initializes the LED and Switch ports on the board.  This
+    function must be called by the user before using any APIs present on this
+    BSP.
 
   Precondition:
     None.
 
   Parameters:
-    data            - Pointer to the data structure containing any data
-                      necessary to initialize the module. This pointer may
-                      be null if no data is required and default initialization
-                      is to be used.
+    None
 
   Returns:
     None.
 
   Example:
     <code>
-    SYS_Initialize ( NULL );
-
-    while ( true )
-    {
-        SYS_Tasks ( );
-    }
+    //Initialize the BSP
+    BSP_Initialize();
     </code>
 
   Remarks:
-    This function will only be called once, after system reset.
+    None
 */
 
-void SYS_Initialize( void *data );
+void BSP_Initialize(void);
 
-/* Nullify SYS_Tasks() if only PLIBs are used. */
-#define     SYS_Tasks()
+#endif // _BSP_H
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: extern declarations
-// *****************************************************************************
-// *****************************************************************************
-
-
-
-
-//DOM-IGNORE-BEGIN
-#ifdef __cplusplus
-}
-#endif
-//DOM-IGNORE-END
-
-#endif /* DEFINITIONS_H */
 /*******************************************************************************
  End of File
 */
-

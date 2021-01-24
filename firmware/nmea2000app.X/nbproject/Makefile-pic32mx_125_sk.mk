@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c ../src/config/pic32mx_125_sk/initialization.c ../src/config/pic32mx_125_sk/interrupts.c ../src/config/pic32mx_125_sk/exceptions.c ../src/main_pic32mx.c ../src/NMEA2000_pic32mx.cpp ../src/appn2k.cpp ../src/N2KMessageHandler.cpp
+SOURCEFILES_QUOTED_IF_SPACED=../src/config/pic32mx_125_sk/bsp/bsp.c ../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c ../src/config/pic32mx_125_sk/initialization.c ../src/config/pic32mx_125_sk/interrupts.c ../src/config/pic32mx_125_sk/exceptions.c ../src/main_pic32mx.c ../src/NMEA2000_pic32mx.cpp ../src/appn2k.cpp ../src/N2KMessageHandler.cpp
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1294814837/plib_can1.o ${OBJECTDIR}/_ext/1294814499/plib_clk.o ${OBJECTDIR}/_ext/1484474576/plib_evic.o ${OBJECTDIR}/_ext/1484420748/plib_gpio.o ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o ${OBJECTDIR}/_ext/107778817/initialization.o ${OBJECTDIR}/_ext/107778817/interrupts.o ${OBJECTDIR}/_ext/107778817/exceptions.o ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o ${OBJECTDIR}/_ext/1360937237/appn2k.o ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1294814837/plib_can1.o.d ${OBJECTDIR}/_ext/1294814499/plib_clk.o.d ${OBJECTDIR}/_ext/1484474576/plib_evic.o.d ${OBJECTDIR}/_ext/1484420748/plib_gpio.o.d ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o.d ${OBJECTDIR}/_ext/107778817/initialization.o.d ${OBJECTDIR}/_ext/107778817/interrupts.o.d ${OBJECTDIR}/_ext/107778817/exceptions.o.d ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o.d ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o.d ${OBJECTDIR}/_ext/1360937237/appn2k.o.d ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/135267889/bsp.o ${OBJECTDIR}/_ext/1294814837/plib_can1.o ${OBJECTDIR}/_ext/1294814499/plib_clk.o ${OBJECTDIR}/_ext/1484474576/plib_evic.o ${OBJECTDIR}/_ext/1484420748/plib_gpio.o ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o ${OBJECTDIR}/_ext/107778817/initialization.o ${OBJECTDIR}/_ext/107778817/interrupts.o ${OBJECTDIR}/_ext/107778817/exceptions.o ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o ${OBJECTDIR}/_ext/1360937237/appn2k.o ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/135267889/bsp.o.d ${OBJECTDIR}/_ext/1294814837/plib_can1.o.d ${OBJECTDIR}/_ext/1294814499/plib_clk.o.d ${OBJECTDIR}/_ext/1484474576/plib_evic.o.d ${OBJECTDIR}/_ext/1484420748/plib_gpio.o.d ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o.d ${OBJECTDIR}/_ext/107778817/initialization.o.d ${OBJECTDIR}/_ext/107778817/interrupts.o.d ${OBJECTDIR}/_ext/107778817/exceptions.o.d ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o.d ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o.d ${OBJECTDIR}/_ext/1360937237/appn2k.o.d ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1294814837/plib_can1.o ${OBJECTDIR}/_ext/1294814499/plib_clk.o ${OBJECTDIR}/_ext/1484474576/plib_evic.o ${OBJECTDIR}/_ext/1484420748/plib_gpio.o ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o ${OBJECTDIR}/_ext/107778817/initialization.o ${OBJECTDIR}/_ext/107778817/interrupts.o ${OBJECTDIR}/_ext/107778817/exceptions.o ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o ${OBJECTDIR}/_ext/1360937237/appn2k.o ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o
+OBJECTFILES=${OBJECTDIR}/_ext/135267889/bsp.o ${OBJECTDIR}/_ext/1294814837/plib_can1.o ${OBJECTDIR}/_ext/1294814499/plib_clk.o ${OBJECTDIR}/_ext/1484474576/plib_evic.o ${OBJECTDIR}/_ext/1484420748/plib_gpio.o ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o ${OBJECTDIR}/_ext/107778817/initialization.o ${OBJECTDIR}/_ext/107778817/interrupts.o ${OBJECTDIR}/_ext/107778817/exceptions.o ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o ${OBJECTDIR}/_ext/1360937237/appn2k.o ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o
 
 # Source Files
-SOURCEFILES=../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c ../src/config/pic32mx_125_sk/initialization.c ../src/config/pic32mx_125_sk/interrupts.c ../src/config/pic32mx_125_sk/exceptions.c ../src/main_pic32mx.c ../src/NMEA2000_pic32mx.cpp ../src/appn2k.cpp ../src/N2KMessageHandler.cpp
+SOURCEFILES=../src/config/pic32mx_125_sk/bsp/bsp.c ../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c ../src/config/pic32mx_125_sk/initialization.c ../src/config/pic32mx_125_sk/interrupts.c ../src/config/pic32mx_125_sk/exceptions.c ../src/main_pic32mx.c ../src/NMEA2000_pic32mx.cpp ../src/appn2k.cpp ../src/N2KMessageHandler.cpp
 
 
 
@@ -107,110 +107,122 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1294814837/plib_can1.o: ../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c  .generated_files/1c5ca6d5576be94e56e3a3b2e7ad20d1aed899da.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/135267889/bsp.o: ../src/config/pic32mx_125_sk/bsp/bsp.c  .generated_files/d93f7159d06d3c3bdcd29e972f84e3d90604bda.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/135267889" 
+	@${RM} ${OBJECTDIR}/_ext/135267889/bsp.o.d 
+	@${RM} ${OBJECTDIR}/_ext/135267889/bsp.o 
+	${MP_CPPC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/135267889/bsp.o.d" -o ${OBJECTDIR}/_ext/135267889/bsp.o ../src/config/pic32mx_125_sk/bsp/bsp.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1294814837/plib_can1.o: ../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c  .generated_files/b5c0c4522b187a15ea53e836340f6ef30fc4c1c3.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1294814837" 
 	@${RM} ${OBJECTDIR}/_ext/1294814837/plib_can1.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1294814837/plib_can1.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1294814837/plib_can1.o.d" -o ${OBJECTDIR}/_ext/1294814837/plib_can1.o ../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1294814499/plib_clk.o: ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c  .generated_files/4f30f5af3013235f3f4e51db74c89965e2ff9b10.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1294814499/plib_clk.o: ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c  .generated_files/94e88f192f3aaed70d7ffcc340dc99ac45a1fab6.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1294814499" 
 	@${RM} ${OBJECTDIR}/_ext/1294814499/plib_clk.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1294814499/plib_clk.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1294814499/plib_clk.o.d" -o ${OBJECTDIR}/_ext/1294814499/plib_clk.o ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1484474576/plib_evic.o: ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c  .generated_files/90563c11bb34ab094cab8c019f52915b2c558159.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1484474576/plib_evic.o: ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c  .generated_files/e2993d9d861b0353236233bab241250b30bd6c32.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1484474576" 
 	@${RM} ${OBJECTDIR}/_ext/1484474576/plib_evic.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1484474576/plib_evic.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1484474576/plib_evic.o.d" -o ${OBJECTDIR}/_ext/1484474576/plib_evic.o ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1484420748/plib_gpio.o: ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c  .generated_files/23ff6a4718ef2505550b38a1c5c3f137f17f31a5.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1484420748/plib_gpio.o: ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c  .generated_files/d7f569e1f8318a3aa0dc70ed6f1b451c52f54257.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1484420748" 
 	@${RM} ${OBJECTDIR}/_ext/1484420748/plib_gpio.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1484420748/plib_gpio.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1484420748/plib_gpio.o.d" -o ${OBJECTDIR}/_ext/1484420748/plib_gpio.o ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1159143931/xc32_monitor.o: ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c  .generated_files/3570ff248b5ca14d689eaf1a00c82153f1931dac.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1159143931/xc32_monitor.o: ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c  .generated_files/33d61c7200ac9899c6f8e310ca14e3ff961edc58.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1159143931" 
 	@${RM} ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1159143931/xc32_monitor.o.d" -o ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/107778817/initialization.o: ../src/config/pic32mx_125_sk/initialization.c  .generated_files/e2bc76ec5463d1be849c8fbda710c8330931a7b4.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/107778817/initialization.o: ../src/config/pic32mx_125_sk/initialization.c  .generated_files/6038c949a59bfc094b2bb9641686f585f418fa1.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/107778817" 
 	@${RM} ${OBJECTDIR}/_ext/107778817/initialization.o.d 
 	@${RM} ${OBJECTDIR}/_ext/107778817/initialization.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/107778817/initialization.o.d" -o ${OBJECTDIR}/_ext/107778817/initialization.o ../src/config/pic32mx_125_sk/initialization.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/107778817/interrupts.o: ../src/config/pic32mx_125_sk/interrupts.c  .generated_files/7801febf0b11a732990485d87a6e71e9cad508a1.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/107778817/interrupts.o: ../src/config/pic32mx_125_sk/interrupts.c  .generated_files/b23c59640753c1053c6eec11ab4ea0dfccd786ba.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/107778817" 
 	@${RM} ${OBJECTDIR}/_ext/107778817/interrupts.o.d 
 	@${RM} ${OBJECTDIR}/_ext/107778817/interrupts.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/107778817/interrupts.o.d" -o ${OBJECTDIR}/_ext/107778817/interrupts.o ../src/config/pic32mx_125_sk/interrupts.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/107778817/exceptions.o: ../src/config/pic32mx_125_sk/exceptions.c  .generated_files/5dd64c8c802de237da1e69d6169d31cbe794f764.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/107778817/exceptions.o: ../src/config/pic32mx_125_sk/exceptions.c  .generated_files/62b29351a7f275e0a8a914d2b7070c7bb6618081.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/107778817" 
 	@${RM} ${OBJECTDIR}/_ext/107778817/exceptions.o.d 
 	@${RM} ${OBJECTDIR}/_ext/107778817/exceptions.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/107778817/exceptions.o.d" -o ${OBJECTDIR}/_ext/107778817/exceptions.o ../src/config/pic32mx_125_sk/exceptions.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1360937237/main_pic32mx.o: ../src/main_pic32mx.c  .generated_files/feb9c4d9285fd05e4569c742a6d8edd1aa15bec2.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1360937237/main_pic32mx.o: ../src/main_pic32mx.c  .generated_files/d469617c62290f970c15efe09f165f5208d24410.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/main_pic32mx.o.d" -o ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o ../src/main_pic32mx.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
 else
-${OBJECTDIR}/_ext/1294814837/plib_can1.o: ../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c  .generated_files/d3d0492c506bb727931ff992abc4bd6fffe3f324.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/135267889/bsp.o: ../src/config/pic32mx_125_sk/bsp/bsp.c  .generated_files/d21e24b53d2e83ead52f3103fdc4044d0f62e3.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/135267889" 
+	@${RM} ${OBJECTDIR}/_ext/135267889/bsp.o.d 
+	@${RM} ${OBJECTDIR}/_ext/135267889/bsp.o 
+	${MP_CPPC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/135267889/bsp.o.d" -o ${OBJECTDIR}/_ext/135267889/bsp.o ../src/config/pic32mx_125_sk/bsp/bsp.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1294814837/plib_can1.o: ../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c  .generated_files/e1d8f14e159cbab31d410e0d436ff34a45cf89c6.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1294814837" 
 	@${RM} ${OBJECTDIR}/_ext/1294814837/plib_can1.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1294814837/plib_can1.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1294814837/plib_can1.o.d" -o ${OBJECTDIR}/_ext/1294814837/plib_can1.o ../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1294814499/plib_clk.o: ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c  .generated_files/327024c99cb2207de94ed663fb6718415ba8cc1a.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1294814499/plib_clk.o: ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c  .generated_files/f272792c08ab3c5dc19a3a7520dafdc0411275c6.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1294814499" 
 	@${RM} ${OBJECTDIR}/_ext/1294814499/plib_clk.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1294814499/plib_clk.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1294814499/plib_clk.o.d" -o ${OBJECTDIR}/_ext/1294814499/plib_clk.o ../src/config/pic32mx_125_sk/peripheral/clk/plib_clk.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1484474576/plib_evic.o: ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c  .generated_files/188e6c2e106efb3bbda1ed4b51fe20745564e603.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1484474576/plib_evic.o: ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c  .generated_files/5a8d331b317bb0504592515ff3508eb2e55fa77f.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1484474576" 
 	@${RM} ${OBJECTDIR}/_ext/1484474576/plib_evic.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1484474576/plib_evic.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1484474576/plib_evic.o.d" -o ${OBJECTDIR}/_ext/1484474576/plib_evic.o ../src/config/pic32mx_125_sk/peripheral/evic/plib_evic.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1484420748/plib_gpio.o: ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c  .generated_files/9e3ab0a885fe66f8a073e19c359e0b7eb8bb349.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1484420748/plib_gpio.o: ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c  .generated_files/54f1a4b00a0be77a9e6a6dc89df2a74218ece908.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1484420748" 
 	@${RM} ${OBJECTDIR}/_ext/1484420748/plib_gpio.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1484420748/plib_gpio.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1484420748/plib_gpio.o.d" -o ${OBJECTDIR}/_ext/1484420748/plib_gpio.o ../src/config/pic32mx_125_sk/peripheral/gpio/plib_gpio.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1159143931/xc32_monitor.o: ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c  .generated_files/e1c4d9e09db4f82cb4213b4837224291ba903d4e.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1159143931/xc32_monitor.o: ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c  .generated_files/9f109f55864e434d9dfd79a147ba39ba6ae7e613.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1159143931" 
 	@${RM} ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1159143931/xc32_monitor.o.d" -o ${OBJECTDIR}/_ext/1159143931/xc32_monitor.o ../src/config/pic32mx_125_sk/stdio/xc32_monitor.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/107778817/initialization.o: ../src/config/pic32mx_125_sk/initialization.c  .generated_files/ed3103f3d6b0ed3226b3be33c771223ddf66789.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/107778817/initialization.o: ../src/config/pic32mx_125_sk/initialization.c  .generated_files/444e9609b66582d84b89d7a4eeb589345dfe29f.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/107778817" 
 	@${RM} ${OBJECTDIR}/_ext/107778817/initialization.o.d 
 	@${RM} ${OBJECTDIR}/_ext/107778817/initialization.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/107778817/initialization.o.d" -o ${OBJECTDIR}/_ext/107778817/initialization.o ../src/config/pic32mx_125_sk/initialization.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/107778817/interrupts.o: ../src/config/pic32mx_125_sk/interrupts.c  .generated_files/4a704b651599c09ade3a34add9a7512aa40232a9.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/107778817/interrupts.o: ../src/config/pic32mx_125_sk/interrupts.c  .generated_files/498abe1c949ca476daeb2384c40c2228154de08.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/107778817" 
 	@${RM} ${OBJECTDIR}/_ext/107778817/interrupts.o.d 
 	@${RM} ${OBJECTDIR}/_ext/107778817/interrupts.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/107778817/interrupts.o.d" -o ${OBJECTDIR}/_ext/107778817/interrupts.o ../src/config/pic32mx_125_sk/interrupts.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/107778817/exceptions.o: ../src/config/pic32mx_125_sk/exceptions.c  .generated_files/7c7dc8be360b1d912d1e9f2b37c532099e953177.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/107778817/exceptions.o: ../src/config/pic32mx_125_sk/exceptions.c  .generated_files/8dbfaba7f176579e88a71c93ad474d39e8ad5619.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/107778817" 
 	@${RM} ${OBJECTDIR}/_ext/107778817/exceptions.o.d 
 	@${RM} ${OBJECTDIR}/_ext/107778817/exceptions.o 
 	${MP_CPPC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../../../NMEA2000/src" -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/107778817/exceptions.o.d" -o ${OBJECTDIR}/_ext/107778817/exceptions.o ../src/config/pic32mx_125_sk/exceptions.c    -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1360937237/main_pic32mx.o: ../src/main_pic32mx.c  .generated_files/ae65788cfeb1ba937b0eb3b28552734125bd3c95.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1360937237/main_pic32mx.o: ../src/main_pic32mx.c  .generated_files/109a28f8c202cd35d289dca4468860afb0f0c756.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/main_pic32mx.o 
@@ -221,38 +233,38 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compileCPP
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o: ../src/NMEA2000_pic32mx.cpp  .generated_files/e6416a9df747aad85b850f3a6cdc57083c0098b.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o: ../src/NMEA2000_pic32mx.cpp  .generated_files/608df498abeec14b51aa2771c411c07a634ece92.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o 
 	${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../../../NMEA2000/src" -frtti -fexceptions -fno-check-new -fenforce-eh-specs -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o.d" -o ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o ../src/NMEA2000_pic32mx.cpp   -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1360937237/appn2k.o: ../src/appn2k.cpp  .generated_files/2512f4cc8d9dc9b1002bc1bdf1a53ae503b9b411.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1360937237/appn2k.o: ../src/appn2k.cpp  .generated_files/c55ec0a97eede91296c5d4868a211957591f0f67.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/appn2k.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/appn2k.o 
 	${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../../../NMEA2000/src" -frtti -fexceptions -fno-check-new -fenforce-eh-specs -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/appn2k.o.d" -o ${OBJECTDIR}/_ext/1360937237/appn2k.o ../src/appn2k.cpp   -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o: ../src/N2KMessageHandler.cpp  .generated_files/fff5ee8fa2c619658be137ec7abeb96424ee9c2c.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o: ../src/N2KMessageHandler.cpp  .generated_files/2dafaf1449c1f3b0aafb5e4517c8245579c20d9c.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o 
 	${MP_CPPC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../../../NMEA2000/src" -frtti -fexceptions -fno-check-new -fenforce-eh-specs -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o.d" -o ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o ../src/N2KMessageHandler.cpp   -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 else
-${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o: ../src/NMEA2000_pic32mx.cpp  .generated_files/5e0c37b936a38a8e26d4b36603a61aa37d18d882.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o: ../src/NMEA2000_pic32mx.cpp  .generated_files/c99537201d570a29d1f426f880254e126bf8f095.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o 
 	${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../../../NMEA2000/src" -frtti -fexceptions -fno-check-new -fenforce-eh-specs -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o.d" -o ${OBJECTDIR}/_ext/1360937237/NMEA2000_pic32mx.o ../src/NMEA2000_pic32mx.cpp   -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1360937237/appn2k.o: ../src/appn2k.cpp  .generated_files/820b7a19ef9abdf74119bafd0da73ee4383c6189.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1360937237/appn2k.o: ../src/appn2k.cpp  .generated_files/a0b324f3d28837f7e24714a2eaafcf1bcdcf7f39.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/appn2k.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/appn2k.o 
 	${MP_CPPC} $(MP_EXTRA_CC_PRE)  -g -x c++ -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../../../NMEA2000/src" -frtti -fexceptions -fno-check-new -fenforce-eh-specs -ffunction-sections -I"../src" -I"../src/config/pic32mx_125_sk" -I"../src/packs/PIC32MX570F512L_DFP" -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/appn2k.o.d" -o ${OBJECTDIR}/_ext/1360937237/appn2k.o ../src/appn2k.cpp   -DXPRJ_pic32mx_125_sk=$(CND_CONF)  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o: ../src/N2KMessageHandler.cpp  .generated_files/1acd9843c4dd6a9034b7b8b562ee8b46e4496f2c.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
+${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o: ../src/N2KMessageHandler.cpp  .generated_files/6c8db95f75baeaf5fe346636725aec25bba6e09c.flag .generated_files/9c38dd73fa47c8727ca672a3ac38932765b77050.flag
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/N2KMessageHandler.o 

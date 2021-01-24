@@ -1,4 +1,11 @@
 files:
+- generatedChecksum: 2F6CC050E57B9E5BA8A6C6C9A2D8F09A
+  logicalPath: config\pic32mx_125_sk\bsp
+  name: bsp.c
+  physicalPath: bsp
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 2F6CC050E57B9E5BA8A6C6C9A2D8F09A
 - generatedChecksum: C2B88D9215301ECE3DC36E4B82F2791C
   logicalPath: config\pic32mx_125_sk
   name: exceptions.c
@@ -6,13 +13,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C2B88D9215301ECE3DC36E4B82F2791C
-- generatedChecksum: 6577D050ACB58B1E388589903ABCC9CD
+- generatedChecksum: 62F9B6D6AA581D00A698F7891DFB890E
   logicalPath: config\pic32mx_125_sk
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6577D050ACB58B1E388589903ABCC9CD
+  userChecksum: 46B68C7768494CFBD6E7A36B706943D4
 - generatedChecksum: 5A2353A2D046D9A256C66ED127BBEDBB
   logicalPath: config\pic32mx_125_sk
   name: interrupts.c
@@ -48,13 +55,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9573245AA1016A26B9522406787F6F58
-- generatedChecksum: 0D0666A2DACBE259AA5C312D5BF664F0
+- generatedChecksum: 99BF769C1E5A7A2622F473253B6E789D
   logicalPath: config\pic32mx_125_sk\peripheral\gpio
   name: plib_gpio.c
   physicalPath: peripheral\gpio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 0D0666A2DACBE259AA5C312D5BF664F0
+  userChecksum: 99BF769C1E5A7A2622F473253B6E789D
 - generatedChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
   logicalPath: config\pic32mx_125_sk\stdio
   name: xc32_monitor.c
@@ -62,13 +69,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
-- generatedChecksum: 5ABBC64A8C964788833E6390542B70C4
+- generatedChecksum: EB5F6DF4D6248A084F725F7C5BB689D9
+  logicalPath: config\pic32mx_125_sk\bsp
+  name: bsp.h
+  physicalPath: bsp
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: EB5F6DF4D6248A084F725F7C5BB689D9
+- generatedChecksum: 8AF8E04BDDC7E2E1344357FB387885C7
   logicalPath: config\pic32mx_125_sk
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5ABBC64A8C964788833E6390542B70C4
+  userChecksum: 8AF8E04BDDC7E2E1344357FB387885C7
 - generatedChecksum: 5D5C52527AB1435153DB9B50ADE6B79D
   logicalPath: config\pic32mx_125_sk
   name: device.h
@@ -145,7 +159,7 @@ settings:
   delimiter: ''
   key: heap-size
   security: NON_SECURE
-  value: '512'
+  value: '12288'
 - append: false
   category: C32-LD
   delimiter: ''

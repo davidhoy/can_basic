@@ -6,6 +6,9 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mx_125_sk" projectFiles="true">
+          <logicalFolder name="f2" displayName="bsp" projectFiles="true">
+            <itemPath>../src/config/pic32mx_125_sk/bsp/bsp.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="can" projectFiles="true">
               <itemPath>../src/config/pic32mx_125_sk/peripheral/can/plib_can_common.h</itemPath>
@@ -33,6 +36,7 @@
                    displayName="Important Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="pic32mx_125_sk.mhc" projectFiles="true">
+        <itemPath>../src/config/pic32mx_125_sk/pic32mx_125_sk.mhc/BSP_PIC32MX1_2_5_Starter_Kit.yml</itemPath>
         <itemPath>../src/config/pic32mx_125_sk/pic32mx_125_sk.mhc/can1.yml</itemPath>
         <itemPath>../src/config/pic32mx_125_sk/pic32mx_125_sk.mhc/core.yml</itemPath>
         <itemPath>../src/config/pic32mx_125_sk/pic32mx_125_sk.mhc/dfp.yml</itemPath>
@@ -57,6 +61,9 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mx_125_sk" projectFiles="true">
+          <logicalFolder name="f3" displayName="bsp" projectFiles="true">
+            <itemPath>../src/config/pic32mx_125_sk/bsp/bsp.c</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="can" projectFiles="true">
               <itemPath>../src/config/pic32mx_125_sk/peripheral/can/plib_can1.c</itemPath>
@@ -89,6 +96,7 @@
   <sourceRootList>
     <Elem>../src</Elem>
     <Elem>.</Elem>
+    <Elem>../../Microchip/harmony/v1_11</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -98,7 +106,7 @@
         <targetDevice>PIC32MX570F512L</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>PKOBSKDEPlatformTool</platformTool>
+        <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.50</languageToolchainVersion>
         <platform>3</platform>
@@ -159,7 +167,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mx_125_sk;../src/packs/PIC32MX570F512L_DFP"/>
+                  value="../src;../src/config/pic32mx_125_sk;../src/packs/PIC32MX570F512L_DFP;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -256,7 +264,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mx_125_sk;../src/packs/PIC32MX570F512L_DFP"/>
+                  value="../src;../src/config/pic32mx_125_sk;../src/packs/PIC32MX570F512L_DFP;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -322,6 +330,7 @@
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="UART1" value="true"/>
         <property key="UART2" value="true"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

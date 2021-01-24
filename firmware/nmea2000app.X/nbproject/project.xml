@@ -17,6 +17,7 @@
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>
                 <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>../../Microchip/harmony/v1_11</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
